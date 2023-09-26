@@ -1,4 +1,4 @@
-from schemas.anuncio import AnuncioViewSchema, ListaAnunciosSchema, \
+from schemas.anuncio import AnunciosPostSchema, AnuncioViewSchema, ListaAnunciosSchema, \
                      show_anuncios
 
 from schemas.error import ErrorSchema

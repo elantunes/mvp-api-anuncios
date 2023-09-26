@@ -4,10 +4,17 @@ from typing import List
 from model import Anuncio
 
 
+class AnunciosPostSchema(BaseModel): 
+    """ Define como um novo Anúncio a ser inserido deve ser representado.
+    """
+    anuncios: str    
+
+
 class AnuncioViewSchema(BaseModel):
     """ Define como deve ser a estrutura do Anúncio retornado após uma requisição
     """
     id: int
+    id_veiculo: int
     nome_veiculo: str
     valor_diaria: float
 
@@ -15,7 +22,7 @@ class AnuncioViewSchema(BaseModel):
 class ListaAnunciosSchema(BaseModel):
     """ Define como uma listagem de Anúncios será retornada.
     """
-    alugueis:List[AnuncioViewSchema]
+    anuncios:List[AnuncioViewSchema]
 
 
 # Defs
@@ -29,7 +36,8 @@ def show_anuncios(anuncios: List[Anuncio]):
     for anuncio in anuncios:
         result.append({
             'id': anuncio.id,
-            'nome_veiculo': anuncio.nome_veiculo,
+            'id_veiculo': anuncio.id_veiculo,
+            'modelo': anuncio.modelo,
             'valor_diaria': anuncio.valor_diaria
         })
 
