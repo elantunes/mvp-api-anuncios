@@ -106,4 +106,4 @@ def add_anuncios(form: AnunciosPostSchema):
         logger.error(f"Erro ao adicionar os Anúncios, {e}")
         return {"message": e.__traceback__}, 400
     
-app.run(port=5001, debug=True, use_reloader=True)
+#app.run(debug=False, use_reloader=True)

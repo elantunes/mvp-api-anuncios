@@ -4,3 +4,5 @@ __pycache__/
 env/
 
 log/
+
+database/db_api_anuncios.sqlite3
